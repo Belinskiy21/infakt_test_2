@@ -4,17 +4,17 @@ default: &default
   pool: 5
   port: 5432
   host: 'localhost'
-  username: username
-  password: password
+  username: oleg
+  password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
 
 development:
   <<: *default
-  database: database_development
+  database: todo_infakt_development
 
 test:
   <<: *default
-  database: database_test
+  database: todo_infakt_test
 
 production:
   <<: *default
-  database: database_production
+  database: todo_infakt_production

@@ -1,0 +1,155 @@
+  [1m[35mSQL (3.1ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (55.2ms)[0m  [1m[35mCREATE TABLE "tasks" ("id" serial primary key, "title" character varying, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (16.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (7.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20170924165051)[0m
+  [1m[35m (49.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (12.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-05-17 18:54:30.616021"], ["updated_at", "2018-05-17 18:54:30.616021"]]
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (3.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (14.3ms)[0m  [1m[35mCREATE TABLE "tasks" ("id" serial primary key, "title" character varying, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (11.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (3.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20170924165051)[0m
+  [1m[35m (17.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-05-17 18:54:30.749976"], ["updated_at", "2018-05-17 18:54:30.749976"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mTask Load (1.1ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "tasks" ("title", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Pimp this app"], ["description", "Pimp this TODO app and make it work as perfect as possible."], ["created_at", "2018-05-17 18:54:30.841786"], ["updated_at", "2018-05-17 18:54:30.841786"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "tasks" ("title", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Sign in for workshops"], ["description", "Fill in the workshops registration form and click 'submit'!"], ["created_at", "2018-05-17 18:54:30.846580"], ["updated_at", "2018-05-17 18:54:30.846580"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "tasks" ("title", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Empty your stomach"], ["description", "Prepare your stomach for pizza during workshops"], ["created_at", "2018-05-17 18:54:30.850918"], ["updated_at", "2018-05-17 18:54:30.850918"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "tasks" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "Tell the world about the workshops!"], ["created_at", "2018-05-17 18:54:30.855980"], ["updated_at", "2018-05-17 18:54:30.855980"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks"[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT pg_try_advisory_lock(1842997994285947905);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(1842997994285947905)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (5.8ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = $1[0m  [["id", 1]]
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = $1[0m  [["id", 2]]
+  [1m[35m (3.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = $1[0m  [["id", 3]]
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[31mDELETE FROM "tasks" WHERE "tasks"."id" = $1[0m  [["id", 4]]
+  [1m[35m (6.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "tasks" ("title", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Pimp this app"], ["description", "Pimp this TODO app and make it work as perfect as possible."], ["created_at", "2018-05-17 18:55:27.927791"], ["updated_at", "2018-05-17 18:55:27.927791"]]
+  [1m[35m (11.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "tasks" ("title", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Sign in for workshops"], ["description", "Fill in the workshops registration form and click 'submit'!"], ["created_at", "2018-05-17 18:55:27.941864"], ["updated_at", "2018-05-17 18:55:27.941864"]]
+  [1m[35m (5.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "tasks" ("title", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "Empty your stomach"], ["description", "Prepare your stomach for pizza during workshops"], ["created_at", "2018-05-17 18:55:27.950166"], ["updated_at", "2018-05-17 18:55:27.950166"]]
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "tasks" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "Tell the world about the workshops!"], ["created_at", "2018-05-17 18:55:27.958951"], ["updated_at", "2018-05-17 18:55:27.958951"]]
+  [1m[35m (11.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "tasks"[0m
+Started GET "/" for ::1 at 2018-05-17 21:57:29 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  Rendered tasks/index.html.erb within layouts/application (25.6ms)
+Completed 200 OK in 544ms (Views: 507.6ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-05-17 21:59:37 +0300
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.6ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  Rendered tasks/index.html.erb within layouts/application (27.4ms)
+Completed 200 OK in 475ms (Views: 439.6ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2018-05-17 22:00:31 +0300
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/new.html.erb within layouts/application (22.9ms)
+Completed 200 OK in 47ms (Views: 41.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2018-05-17 22:00:49 +0300
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TzWqxQJkpyzIp5dKk1qDSapC379b6ebW4eYEMqXIfBwYm07BTpZiSamSM2p8ilz3JO86QlrB14/xCbGdtfDwCw==", "task"=>{"title"=>"new task", "description"=>"some description"}}
+Unpermitted parameter: title
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 59ms (Views: 32.0ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2018-05-17 22:01:04 +0300
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hvF6Eb9hXHT2UGdbKGl8nZeCAgm122HckNpWLIynlkorGMjGn3DcK2EPjbDxNfZ/DvZxqchLmyUyNtwZK280gw==", "task"=>{"title"=>"New task", "description"=>"some description"}}
+Unpermitted parameter: title
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 24ms (Views: 20.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2018-05-17 22:01:54 +0300
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (0.8ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  Rendered tasks/index.html.erb within layouts/application (30.1ms)
+Completed 200 OK in 125ms (Views: 101.1ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/tasks/new" for 127.0.0.1 at 2018-05-17 22:01:57 +0300
+Processing by TasksController#new as HTML
+  Rendering tasks/new.html.erb within layouts/application
+  Rendered tasks/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 59ms (Views: 53.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/tasks" for 127.0.0.1 at 2018-05-17 22:02:29 +0300
+Processing by TasksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3KynfmvZZ/sKMWgeoudhSyINGXTQfOfKXbOd+aT2xjyLAkN6JyuinmsEzD5NN771rKD8idFU1pNNXChWtM5KKw==", "task"=>{"title"=>"New task", "description"=>"description of new task"}}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "tasks" ("title", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "New task"], ["description", "description of new task"], ["created_at", "2018-05-17 19:02:29.945255"], ["updated_at", "2018-05-17 19:02:29.945255"]]
+  [1m[35m (5.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/tasks
+Completed 302 Found in 13ms (ActiveRecord: 7.1ms)
+
+
+Started GET "/tasks" for 127.0.0.1 at 2018-05-17 22:02:29 +0300
+Processing by TasksController#index as HTML
+  Rendering tasks/index.html.erb within layouts/application
+  [1m[36mTask Load (1.9ms)[0m  [1m[34mSELECT "tasks".* FROM "tasks"[0m
+  Rendered tasks/index.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 67ms (Views: 61.2ms | ActiveRecord: 1.9ms)
+
+
